@@ -3,47 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SignUp Page</title>
 <link rel="stylesheet" href="CSS/bootstrap.min.css">
-<script src="JS/script.js"></script>
-<style>
-   .row{
-    justify-content: center;
-    margin-top: 50px;
-   }
-  .text-primary{
-    justify-content: center;
-  }
-</style>
+<link rel="stylesheet" href="CSS/style.css">
+
 </head>
 <body >
-   
 
-    <div class="container">
-        <div class="row" id="Login">
-        <form action="" method="post" id="Loginform">
-            <h1 class="text-primary text-center">Login</h1>
-        <div class="inputs">
-            <input type="text" id="name" placeholder="Company's name" required class="form-control"><br>
-        </div>
-         <div class="inputs">
-            <input type="email"  id="email" placeholder="Company's email" required class="form-control"><br> 
-        </div>
-        <div class="inputs">
-            <input type="password" name="" id="password" placeholder="Password" required class="form-control"><br>
-        </div>
-        <div class="inputs">
-           <button type="submit" class="btn btn-primary" id="loginbutton">Login here</button><br>
-    </div>
-    <P>D'ont have an Account yet? <a href="#SignUp">SignUp</a></P>
-</form>
-         </div>
-    <div class="row" id="SignUp">
-       
-        <form action="" method="post" id="SignUpform" role="form">
+    <div class="comtainer" id="SignUp">
+        <div class="row justify-content-center">
+        <form action="" method="post"  role="form">
             <h1 class="text-primary text-center">SignUp</h1>
             <div class="inputs">
-                <input type="text" class="form-control" id="name" placeholder="Company's name" required><br>
+                <input type="text" class="form-control width-30rem" id="name" placeholder="Company's name" required><br>
             </div>
              <div class="inputs">
                 <input type="email" class="form-control" id="email" placeholder="Company's email" required><br> 
@@ -64,14 +36,15 @@
                 <input type="text" class="form-control" id="fees" placeholder="Registration fees" required>
             </div>
             <div class="btn">
-               <button type="submit" class=" btn btn-primary btn-link text-white" id="signupbutton">SignUp here</button><br>
+              <a href="login.html"> <button type="submit" class=" btn btn-primary btn-link text-white mx-5 my-3">SignUp</button></a><br>
                  
             </div>
-            <p>Already have an account? <a href="#Loginform">Login</a></p><br>
+            <p>Already have an account? <span><a href="login.html" id="loginbutton" class="text-primary">Login</a></span> </p><br>
         </form>
+         </div>
+     <footer class="jumbotron text-center text-dark height-6rem mt-5"><em>&copy </em>GLAMOURHUB 2024</footer>
     </div>
-</div>
 
-<footer class="jumbotron text-center text-white height-6rem"><em>&copy </em>GLAMOURHUB 2024</footer>
+    <script src="script.js"></script> 
 </body>
 </html>
