@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Add new services</h2>
+    <form method="post" action="profile.html">
+        <input type="file" accept="image/*" id="imageFile" name="imageFile">
+        <label for="image">Choose a profile picture</label>
+        <button type="button" onclick="updateContent()">Update profile</button>
+        <p id="updatedContent"></p>
+    </form>
+<script>
+    function updateContent(){
+    const content = 
+    document.getElementById('imageFile').value;
+    localStorage.setItem('updatedContent',imageFile);
+    document.getElementById('updatedContent'). innerText = 'Updated Content: ' + imageFile;
+    }
+</script>
+</body>
+</html>
