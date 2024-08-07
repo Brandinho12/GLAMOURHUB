@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,29 +11,31 @@
 <body>
     <div class="container" id="booking">
         <div class="row justify-content-center">
-            <div class="col-lg-6">
-        <form action="" method="post">
+            <div class="col-sm-6">
+        <form action="index.php" method="post">
             <h1 class="text-primary-text-center">BOOKING</h1>
             <div class="input-box">
-                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="text" name="full_name" placeholder="Full Name" id="full_name">
+            </div>
+            <div class="col-sm-5">
+            <div class="input-box">
+                
+                <input type="text" id="email_address" placeholder="Email Address" name="email_address" required>
             </div>
             <div class="input-box">
-                <input type="text" id="Email" placeholder="Email Address" required>
+                <input type="text" id="phone_number" placeholder="Phone Number"  name="phone_number" required>
             </div>
             <div class="input-box">
-                <input type="tel" placeholder="Phone Number" required>
+                <input type="location" id="location" placeholder="location" name="location" required>
             </div>
             <div class="input-box">
-                <input type="location" id="location" placeholder="Location" autocomplete="off" required>
+                <input type="date" class="checkbox" name="date" placeholder="" required>
             </div>
             <div class="input-box">
-                <input type="date" class="checkbox" id="date" placeholder="" autocomplete="off" required>
-            </div>
-            <div class="input-box">
-                <input type="time" class="checkbox" id="date" placeholder="" autocomplete="off" required>
+                <input type="time" class="checkbox" name="time" placeholder=""  required>
             </div><br>
             <div class="wrapper">
-                 <button class="btn bth-default btn-lg" button type="submit" class="btn" onclick="Notification()">Book Now</button>
+                 <button class="btn bth-default btn-lg" button type="submit" name="summit" class="btn" onclick="Notification()">Book Now</button>
                  
             </div><br><br>
             <div>
