@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=poppins:wght@400;6008display=swap");
+#mainhdr{
+    background-color: rgb(246, 54, 246);
+    padding: 100px;
+}
+button{
+    font-weight: bold;
+    border-radius: 10px;
+    color: black;
+}
+button:hover{
+    background-color: #e0e0e058;
+    border-radius: 5px;
+    color: white;
+}
+.at-Top{
+    display: flexbox; 
+    flex-direction: column; 
+    justify-content: center;
+}
+#menu{
+    display: flexbox; 
+    flex-direction: column; 
+    text-align: center;
+    background-color: #b04fb0; 
+    background: linear-gradient(
+    to right,
+    #b04fb0,
+    #4f80b0,
+    pink
+);
+    width: 10%; 
+    height: 100%; 
+    top: 0; left: 0; 
+    position: fixed; 
+    align-content: space-between;
+}
+#menu:hover{
+width: 20%;
+transition: 0.5s;
+}
+.tabb{
+    color: black;
+    padding: 1rem;
+    margin: 8px 0;
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+    font-size: 14px;
+    gap: 1.5rem;
+}
+.tabb:hover:active, .active{
+background: #e0e0e058;
+}
+*{
+    font-family: "Poppins", sans-serif;
+}
+i{
+    font-size: x-large;
+}
+/*.section{
+    display: none;
+}
+.section.active{
+    display: block;
+}*/
+
+#settings{
+    background-color: #e0e0e058;
+    border: 2px solid black;
+    border-radius: 6px;
+    color: black;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items:  center;
+    gap: 10px;
+}
+h1, h4{
+    font-family: "Roboto Slab";
+    font-weight: 500;
+}
+.toggle-container{
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+}
+.toggle{
+    width: 60px;
+    height: 35px;
+    border-radius: 40px;
+    background-color: pink;
+    display: inline-block;
+}
+.toggle-c{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: blue;
+    display: inline-block;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    transition: 300ms all;
+    border: 1px solid black;
+}
+input[type="checkbox"]{
+display: none;
+}
+input[type="checkbox"]:checked + div .toggle-c{
+    left: 30px;
+    background-color: violet;
+    border-radius: #30305c;
+}
+hr{
+    border-color: black;
+}
+body{
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+#help{
+    background-color: #e0e0e058;
+    border: 2px solid black;
+    border-radius: 6px;
+    color: black;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items:  center;
+    gap: 10px;
+}
+h1#welcome{
+    text-shadow: black;
+}
+#scroll-container{
+    border: 3px solid violet;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#scroll-text{
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+
+    -moz-animation: my-animation 15s linear infinite;
+    -webkit-animation: my-animation 15s linear infinite;
+    animation: my-animation 15s linear infinite;
+}
+@-moz-keyframes my-animation{
+    from {
+        -moz-transform: translateX(100%);
+    }
+    to{
+        -moz-transform: translateX(-100%);
+    }
+}
+@-webkit-keyframes my-animation{
+    from{
+        -webkit-transform: translateX(100%);
+    }
+    to{
+        -webkit-transform: translateX(-100%);
+    }
+}
+@keyframes my-animation{
+    from{
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+    to{
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+#frame{
+   border: 1px solid black; 
+   bottom: 0;
+   left: 10%;
+   width: 200vh;
+   height: 200vh;
+}
+#contenttt{
+    display: flexbox;
+    flex-direction: column; 
+    justify-content: center; 
+    text-align: center;  
+    width: 90%; 
+    margin-left: 10%;
+}
+#contenttt:hover{
+    width: 80%;
+}

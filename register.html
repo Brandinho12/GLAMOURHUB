@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp Page</title>
+<link rel="stylesheet" href="CSS/bootstrap.min.css">
+`<link rel="stylesheet" href="CSS/style.css">
+
+</head>
+<body class="home">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar justify-content-center">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-between w-100 align-items-center">
+                <div class="navbar-brand">
+                    <img src="logo.png" alt="GLAMOURHUB Logo" class="logo">
+                    <em><p class="tagline">Your Best Beauty Pal</p></em>
+                </div>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="index.html">Home</a>
+                        </li>
+                        
+                        <li class="nav-item active">
+                            <a class="nav-link text-white" href="#">Register</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="about.html">About Us</a>
+                        </li>
+                    </ul>
+                </div>
+              
+            </div>
+            <!--<h1>WELCOME TO GLAMOURHUB</h1>-->
+
+        </div>   
+    </nav>
+    <div class="container-fluid" id="SignUp">
+        <div class="row justify-content-center col-lg-12">
+        <form action="Php/register.php" method="post"  role="form" id="signupform">
+            <h1 class="text-primary text-center">SignUp</h1>
+            <div class="inputs">
+                <i class="bi bi-person-fill"></i>
+                <input type="text" name="company_name" class="form-control width-30rem" id="name" placeholder="Company's name" required><br>
+            </div>
+             <div class="inputs">
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-envelope"></span>
+                </span>
+                <input type="email" name="company_email" class="form-control" id="email" placeholder="Company's email" required><br> 
+            </div>
+            
+         
+            <select id="Categories" name="category">
+                <option value="">Select Categories</option>
+                <option value="Hair Salon">HAIR STYLING</option>
+                <option value="Barbing">BARBING</option>
+                <option value="Spa">SPA</option>
+                <option value="Gym">GYM HOUSES</option>
+                
+            </select> <br><br><br>
+                
+            
+            <div class="inputs">
+
+                    <span class="glyphicon glyphicon-lock"></span>
+                <input type="text" name="company_password" class="form-control" name="" id="password" autocomplete="off" placeholder="Password" required><br>
+            </div>
+           <!--
+            <div class="inputs">
+                 <input type="text" name="confirm_password" class="form-control" id="Confirm password" placeholder="Confirm Password" required><br>  
+            </div>
+       -->
+            <div class="inputs">
+                    <span class="glyphicon glyphicon-map-maker"></span>
+                <input type="text" name="company_location" class="form-control" id="location" placeholder="Location" required><br>   
+            </div>
+            <div class="inputs">
+                <input type="number" name="phone_number" class="form-control" id="phone_number" placeholder="Phone number"><br>   
+            </div>
+            <div class="btn">
+             <button type="submit" class="btn btn-primary" name="vendor-signup">SignUp</button>
+            </div>
+            <p>Already have an account? <span><a href="login.html" id="loginbutton" class="text-primary">Login</a></span> </p><br>
+        </form>
+         </div>
+         <div class="text-center footer fixed-bottom custom-navbar">
+            <p>&copyGLAMOURHUB 2024</p> 
+        </div>
+    </div>
+    <!--<script src="https://js.paystack.co/v1/inline.js"></script>-->
+    <script src="JS/login.js"></script>
+</body>
+</html>
+
+       
+                   
+                    

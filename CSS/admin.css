@@ -1,0 +1,285 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color:white;
+    overflow: hidden;
+    font-family: system-ui;
+
+}
+.clearfix{
+    clear: both;
+}
+
+.logo{
+    margin: 0px;
+    margin-left: 28px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 30px;
+    font-size: 30px;
+
+}
+.logo span{
+    color:rgb(246, 54, 246);
+
+}
+.sidenav{
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+        to bottom,
+        #b04fb0,
+        #4f80b0,
+       pink
+      );
+      color: white;
+   
+    overflow: hidden;
+    transition: 0.5s;
+    padding-top: 30px;
+
+
+}
+.sidenav a{
+    padding: 15px 8px 15px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color:white;
+    display: block;
+    transition: 0.3s;
+
+}
+.sidenav a:hover{
+    color:#b04fb0;
+    background-color: #1b203d;
+}
+#main{
+    transition: margin-left .5s;
+    padding: 16px;
+    margin-left: 300px;
+}
+.head{
+    padding: 20px;
+
+}
+.col-div-6{
+    width: 50%;
+    float: left;
+}
+.nav2{
+    display: none;
+
+}
+.col-div-3{
+    width: 25%;
+    float: left;
+}
+.box{
+    width: 85%;
+    height: 100px;
+    background-color:#e1e6ff ;
+    margin-left: 10px;
+    padding: 10px;
+
+}
+.box p{
+    font-size: 35px;
+    color: rgb(246, 54, 246);
+    font-weight: bold;
+    line-height: 30px;
+    padding-left: 10px;
+    margin-top: 20px;
+    display: inline-block;
+
+}
+.box p span{
+    font-size: 20px;
+    font-weight: 400;
+    color: #818181;
+
+}
+.box-icon{
+    font-size: 40px!important;
+    float: right;
+    margin-top: 35px!important;
+    color: #818181;
+    padding-right: 10px;
+
+}
+.col-div-8{
+    width: 70%;
+    float: left;
+}
+.col-div-4{
+    width: 30%;
+    float: left;
+}
+.content-box{
+    padding: 20px;
+
+}
+.content-box p{
+    margin: 0px;
+    font-size: 20px;
+    color:rgb(246, 54, 246);
+
+}
+.content-box p span{
+    float: right;
+    background-color: #ddd;
+    padding: 3px 10px;
+    font-size: 15px;
+
+}
+.box-8, .box-4{
+    width: 96.5%;
+    background-color:#e1e6ff;
+    height: 330px;
+
+}
+.box-8{
+    margin-left: 10px;
+    width: 95%;
+}
+table{
+border-collapse: collapse;
+width: 100%;
+
+}
+td, th{
+    text-align: left;
+    padding: 15px;
+    color: #ddd;
+    border-bottom: 1px solid #81818149;
+}
+.circle-wrap{
+ margin: 50px auto;
+ height: 150px;
+ width: 150px;
+ background: #e6e2e7;
+ border-radius: 50%;
+}
+.circle-wrap .circle .mask,
+.circle-wrap .circle .fill{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    border-radius: 50%;
+
+}
+.circle-wrap .circle .mask{
+    clip: rect(0px, 150px,150px,75px,);
+}
+.circle-wrap .circle .mask .fill{
+    clip: rect(0px, 75px,150px,0px,);
+    background-color: rgb(246, 54, 246);
+}
+.circle-wrap .circle .mask.full,
+.circle-wrap .circle .fill{
+    animation: fill ease-in-out 3s;
+    transform: rotate(126deg);
+}
+@keyframes fill{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(126deg);  
+    }
+}
+.circle-wrap .inside-circle{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: #fff;
+    line-height: 130px;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    position: absolute;
+    z-index: 100;
+    font-weight: 700;
+    font-size: 2em;
+}
+a,button{
+    cursor: pointer;
+}
+nav{
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    width: 250px;
+}
+.navigation{
+   position: fixed;
+   right: -500px;
+   width: 250px;
+   height:20%;
+   background-color: #fff;
+   transition: .5s;
+}
+.navigation ul li {
+    color: #fff;
+    text-align: right;
+    text-transform: uppercase;
+    list-style-type: none;
+    font-size: 0.75em;
+    padding: 20px 30px;
+   
+}
+.navigation ul li a{
+    color: black;
+    text-decoration: none;
+
+}
+.navigation ul li a:hover{
+    background-color: #b04fb0;
+}
+.hamburger, .bar{
+    position: fixed;
+
+}
+.hamburger{
+    display: block;
+    top: 5%;
+    left: 95%;
+    width: 30px;
+    height: 30px;
+    transform: translateY(-50%);
+    border: 0;
+    background: 0 0;
+}
+.bar{
+    top: 3px;
+    background: #000;
+    width: 100%;
+    height: 4px;
+    transition: all .3s ease-in;
+}
+#bar2{
+    top: 11px;
+
+}
+#bar3{
+    top: 19px;
+}
+
+.navigation.active{
+    right: 0;
+}
+/*.hamburger.open #bar1{
+    background-color: #fff;
+}
+.hamburger.open #bar2{
+    background-color: #fff;
+    background-color: transparent;
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open #bar3{
+    background-color: #fff;
+    transform: rotate(-45deg) translate(5px, -5px);
+}

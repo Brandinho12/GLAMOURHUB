@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlamourHub - Client Login & Signup</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS for additional styling -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            margin-bottom: 30px;
+        }
+        .logo img {
+            width: 150px;
+        }
+        .btn-toggle {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .form-section {
+            display: none;
+        }
+        .form-section.active {
+            display: block;
+        }
+    .btn-violet {
+        background-color: #8A2BE2; /* Violet color */
+        border-color: #8A2BE2; /* Matching border color */
+        color: white; /* Text color */
+    }
+
+    .btn-violet:hover {
+        background-color: #7A1CC7; /* Darker shade of violet for hover */
+        border-color: #7A1CC7;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="navbar-brand">
+                <img src="logo.png" alt="GLAMOURHUB Logo" style="width: 100px;">
+            </div>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login_signp.html">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+
+        <!-- Login Form -->
+        <div id="loginForm" class="card form-section active">
+            <div class="card-body">
+                <h3 class="card-title text-center">Client Login</h3>
+                <form action="Php/login_signup.php" method="POST">
+                    <input type="hidden" name="action" value="login">
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-violet btn-block">Login</button>
+                </form>
+                <div class="btn-toggle">
+                    <p>Don't have an account? <a href="#" id="showSignupForm">Sign Up</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="signupForm" class="card form-section">
+            <div class="card-body">
+                <h3 class="card-title text-center">Client Signup</h3>
+                <form action="Php/login_signup.php" method="POST">
+                    <input type="hidden" name="action" value="signup">
+                    <div class="form-group">
+                        <label for="full_name">Full Name</label>
+                        <input type="text" class="form-control" id="full_name" name="full_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup_email">Email address</label>
+                        <input type="email" class="form-control" id="signup_email" name="email" required>
+                    </div>
+                      <div class="form-group">
+                        <label for="phone_number">Phone number</label>
+                        <input type="number" class="form-control" id="phone_number" name="phone_number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup_password">Password</label>
+                        <input type="password" class="form-control" id="signup_password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-violet btn-block">Sign Up</button>
+                </form>
+                <div class="btn-toggle">
+                    <p>Already have an account? <a href="#" id="showLoginForm">Login</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Link to Vendor Login/Signup Page -->
+        <div class="text-center mt-4">
+            <p>Are you a vendor? <a href="register.html">Switch to Vendor Login/Signup</a></p>
+        </div>
+    </div>
+
+    <!-- Bootstrap and jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#showSignupForm').click(function() {
+                $('#loginForm').removeClass('active');
+                $('#signupForm').addClass('active');
+            });
+
+            $('#showLoginForm').click(function() {
+                $('#signupForm').removeClass('active');
+                $('#loginForm').addClass('active');
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

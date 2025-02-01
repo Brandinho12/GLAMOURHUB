@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> 
+    
+    <link rel="stylesheet" href="CSS/style.css">
+   <!--<style>
+        body {
+    background-color:beige;
+}
+
+h1 {
+    margin-top: 20px;
+    background-color: #b04fb0;
+    color: white;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card img {
+    height: 150px;
+    width:100%;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+.footer {
+    background-color:#b04fb0;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    bottom: 0%;
+}
+
+nav{
+    background-color: #b04fb0;
+}
+    </style> --> 
+</head>
+<body class="home">
+
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar justify-content-center">
+            <div class="container-fluid">
+                <div class="d-flex justify-content-between w-100 align-items-center">
+                    <div class="navbar-brand">
+                        <img src="logo.png" alt="GLAMOURHUB Logo" class="logo">
+                        <em><p class="tagline">Your Best Beauty Pal</p></em>
+                    </div>
+                    <div class="welcome">
+                        <h1 class="heading">WELCOME TO GLAMOURHUB</h1>
+                    </div>
+                    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" id="toggleMenu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                   
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link text-white" href="#">Home</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <button class="nav-link text-white custom-navbar" id="main-regis">Register</button>
+                                <div id="rolebuttons">
+                                    <button onclick="window.location.href='login_signp.html'">Register as a user</button>
+                                </div>
+                                    
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="about.html">About Us</a>
+                            </li>
+                        </ul>
+                       
+                    </div>
+                  
+                </div>
+                <!--<h1>WELCOME TO GLAMOURHUB</h1>-->
+   
+            </div>   
+        </nav>
+    
+        <div class="container" id="cardId">
+            
+            <div class="row mt-4">
+                <div class="col-md-3">
+                    <div class="card">
+                      <a href="search.html"> <img src="bekap/images/braids1.jpg" class="card-img-top" alt="Hair Salons"></a> 
+                        <div class="card-body">
+                            <h5 class="card-title">HAIR SALONS</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                     <a href="search.html"><img src="bekap/images/barbing.jpg" class="card-img-top" alt="Barbing Salon"></a>
+                        <div class="card-body">
+                            <h5 class="card-title">BARBING SALONS</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <a href="search.html"><img src="bekap/images/africangym.jpg" class="card-img-top" alt="Gym Houses"></a>
+                        <div class="card-body">
+                            <h5 class="card-title">GYM HOUSES</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <a href="search.html"><img src="bekap/images/spa.jpg" class="card-img-top" alt="Spa Houses"></a>
+                        <div class="card-body">
+                            <h5 class="card-title">SPA HOUSES</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="text-center mt-4 footer fixed-bottom custom-navbar">
+            <p>&copyGLAMOURHUB 2024</p>
+    
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+            document.getElementById('main-regis').onclick = function(){
+                var rolebuttons = document.getElementById('rolebuttons');
+                rolebuttons.style.display = rolebuttons.style.display === 'block' ? 'none' : 'block';
+            }
+        </script>
+</body>
+</html>

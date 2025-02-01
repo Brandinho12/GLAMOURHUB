@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>My Orders</h2>
+        <div id="ordersContainer" class="mt-4">
+            <!-- Orders will be displayed here -->
+        </div>
+    </div>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('fetch_orders.php')
+                .then(response => response.json())
+                .then(orders => {
+                    const ordersContainer = document.getElementById('ordersContainer');
+                    if (orders.length === 0) {
+                        ordersContainer.innerHTML = '<p>No orders found.</p>';
+                    } else {
+                        let output = '<table class="table table-bordered"><thead><tr><th>Service</th><th>Date</th><th>Status</th></tr></thead><tbody>';
+                        orders.forEach(order => {
+                            output += `<tr><td>${order.service_name}</td><td>${order.booking_date}</td><td>${order.status}</td></tr>`;
+                        });
+                        output += '</tbody></table>';
+                        ordersContainer.innerHTML = output;
+                    }
+                })
+                .catch(error => console.error('Error fetching orders:', error));
+        });
+    </script>
+</body>
+</html>
