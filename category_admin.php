@@ -37,17 +37,17 @@
 
             while ($row = $result->fetch_assoc()) {
                 echo '<div class="list-group-item">';
-                echo '<h5>' . $row['name'] . '</h5>';
-                echo '<img src="' . $row['image_path'] . '" alt="' . $row['name'] . '" width="100">';
+                echo '<h5>' . $row['category_name'] . '</h5>';
+                echo '<img src="' . $row['image_path'] . '" alt="' . $row['category_name'] . '" width="100">';
                 echo '<form action="manage_categories.php" method="POST" class="mt-3 d-inline">';
                 echo '<input type="hidden" name="action" value="edit_category">';
-                echo '<input type="hidden" name="category_id" value="' . $row['id'] . '">';
+                echo '<input type="hidden" name="category_id" value="' . $row['category_id'] . '">';
                 echo '<input type="hidden" name="existing_image" value="' . $row['image_path'] . '">';
                 echo '<button type="submit" class="btn btn-warning">Edit</button>';
                 echo '</form>';
                 echo '<form action="manage_categories.php" method="POST" class="mt-3 d-inline ml-2">';
                 echo '<input type="hidden" name="action" value="delete_category">';
-                echo '<input type="hidden" name="category_id" value="' . $row['id'] . '">';
+                echo '<input type="hidden" name="category_id" value="' . $row['category_id'] . '">';
                 echo '<button type="submit" class="btn btn-danger">Delete</button>';
                 echo '</div>';
             }
