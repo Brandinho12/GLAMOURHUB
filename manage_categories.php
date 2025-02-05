@@ -66,11 +66,41 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action'])) {
 
         if ($stmt->execute()) {
             echo "Category added successfully.";
-            header("Location:index.html");
+            header("Location:index.php");
             exit;
         } else {
             echo "Error adding category: " . $stmt->error;
         }
+    }
+     // Delete Category
+     elseif ($action === 'delete_category') {
+        $category_id = $_POST['category_id'];
+
+        // Fetch the image path to delete the image file
+        $stmt = $conn->prepare("SELECT image_path FROM categories WHERE category_id = ?");
+        $stmt->bind_param("i", $category_id);
+        $stmt->execute();
+        $stmt->bind_result($image_path);
+        $stmt->fetch();
+        $stmt->close();
+
+        // Delete the category from the database
+        $stmt = $conn->prepare("DELETE FROM categories WHERE category_id = ?");
+        $stmt->bind_param("i", $category_id);
+
+        if ($stmt->execute()) {
+            // Delete the image file
+            if (file_exists($image_path)) {
+                unlink($image_path);
+            }
+            $_SESSION['success'] = "Category deleted successfully!";
+        } else {
+            $_SESSION['error'] = "Failed to delete category!";
+        }
+        $stmt->close();
+
+        header("Location: manage_categories.php");
+        exit();
     }
 
     $stmt->close();

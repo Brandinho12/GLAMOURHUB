@@ -1,12 +1,20 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+
 session_start();
 require 'connection.php';
 
 // Fetch categories from the database
-$query = "SELECT * FROM categories";
+$query = "SELECT category_name, image_path FROM categories";
 $result = $conn->query($query);
+
+$categories = [];
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $categories[] = $row;
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -14,128 +22,50 @@ $result = $conn->query($query);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
-
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="CSS/style.css">
-
-    <!-- Inline CSS for styling -->
-    <style>
-        .role-buttons {
-            display: none;
-            position: absolute;
-            background: white;
-            border: 1px solid #ccc;
-            padding: 10px;
-            right: 0;
-            top: 40px;
-            z-index: 1000;
-        }
-        .role-buttons button {
-            display: block;
-            width: 100%;
-            margin-top: 5px;
-            padding: 8px;
-            border: none;
-            background: #b04fb0;
-            color: white;
-            cursor: pointer;
-        }
-        .role-buttons button:hover {
-            background: #8d3a8d;
-        }
-        .center-register {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-        }
-    </style>
+    <title>GLAMOURHUB</title>
 </head>
+<body style="margin: 0; font-family: Arial, sans-serif; background-color: #1e1e1e; color: white;">
 
-<body class="home">
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
-        <div class="container-fluid">
-            <a class="navbar-brand" >
-                <img src="logo.png" alt="GLAMOURHUB Logo" class="logo">
-                <em><p class="tagline">Your Best Beauty Pal</p></em>
-            </a>
-
-            <!-- Navbar Toggler for Mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Collapsible Navbar -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a class="nav-link text-white" href="index.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="about.html">About Us</a></li>
-                    <li class="nav-item position-relative">
-                        <button class="nav-link text-white" id="main-regis">Register</button>
-                        <div id="rolebuttons" class="role-buttons">
-                            <button onclick="window.location.href='login_signup.html'">Register as a User</button>
-                            <button onclick="window.location.href='vendor_signup.html'">Register as a Vendor</button>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Centered Register Button -->
-    <div class="center-register">
-        <button class="btn btn-primary" onclick="window.location.href='login_signup.html'">Register Here</button>
+    <!-- Header -->
+    <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; background-color: #2c2c2c;">
+        <img src="logo.png" alt="GLAMOURHUB Logo" style="height: 50px;">
+        <h1 style="marquee">WELCOME TO GLAMOURHUB</h1>
+        <nav style="display: flex; gap: 20px;">
+            <a href="#" style="color: white; text-decoration: none; font-size: 18px;">Home</a>
+            <a href="#" style="color: white; text-decoration: none; font-size: 18px;">About Us</a>
+            <a href="#" style="color: #ff69b4; text-decoration: none; font-size: 18px; border: 1px solid #ff69b4; padding: 5px 15px; border-radius: 20px;">Register</a>
+        </nav>
     </div>
 
-    <!-- Dynamic Categories Section -->
-    <div class="container" id="cardId" style="margin-top: 20px;">
-        <div class="row mt-4">
-            <?php while ($row = $result->fetch_assoc()): ?>
-                <div class="col-md-3">
-                    <div class="card">
-                        <a href="search.html">
-                            <img src="<?php echo $row['image_path']; ?>" class="card-img-top" alt="<?php echo htmlspecialchars($row['category_name']); ?>">
-                        </a>
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo htmlspecialchars($row['category_name']); ?></h5>
-                        </div>
-                    </div>
+    <!-- Main Content -->
+    <div style="background: url('back.webp') no-repeat center center; background-size: cover; padding: 40px 20px; text-align: center;">
+    <h1 style="font-size: 48px; color: #ff69b4;">YOUR BEST BEAUTY PAL</h1>
+    <p style="font-size: 16px; color: #ccc;">Find and book beauty services with ease.</p>
+</div>
+
+<!--<div style="display: inline-block; width: 400px; overflow: hidden; white-space: nowrap; position: relative;">>
+        <h1 style="font-size: 48px; color: #ff69b4;">YOUR BEST BEAUTY PAL</h1>
+        <p style="font-size: 16px; color: #ccc;">Find and book beauty services with ease.</p>
+    </div>-->
+
+    <!-- Scrollable Categories -->
+    <div style="display: flex; overflow-x: auto; padding: 20px; gap: 20px; background-color: #2c2c2c;">
+        <?php if (!empty($categories)): ?>
+            <?php foreach ($categories as $category): ?>
+                <div style="min-width: 250px; background-color: #3a3a3a; border-radius: 10px; overflow: hidden; text-align: center;">
+                    <img src="<?php echo htmlspecialchars($category['image_path']); ?>" alt="<?php echo htmlspecialchars($category['category_name']); ?>" style="width: 100%; height: 200px; object-fit: cover;">
+                    <h2 style="margin: 10px 0; color: white;"><?php echo htmlspecialchars($category['category_name']); ?></h2>
                 </div>
-            <?php endwhile; ?>
-        </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p style="color: #ccc;">No categories found.</p>
+        <?php endif; ?>
     </div>
 
     <!-- Footer -->
-    <div class="text-center mt-4 footer fixed-bottom custom-navbar">
-        <p>&copy; GLAMOURHUB 2024</p>
-    </div>
+    <footer style="text-align: center; padding: 20px; background-color: #2c2c2c; color: #ccc;">
+        &copy; <?php echo date("Y"); ?> GLAMOURHUB. All rights reserved.
+    </footer>
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        // Toggle register button dropdown
-        document.getElementById('main-regis').addEventListener('click', function(event) {
-            event.stopPropagation();
-            var rolebuttons = document.getElementById('rolebuttons');
-            rolebuttons.style.display = (rolebuttons.style.display === 'block') ? 'none' : 'block';
-        });
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(event) {
-            var rolebuttons = document.getElementById('rolebuttons');
-            if (rolebuttons.style.display === 'block' && !event.target.closest('#main-regis')) {
-                rolebuttons.style.display = 'none';
-            }
-        });
-    </script>
 </body>
 </html>
