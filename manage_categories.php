@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action'])) {
 
         if ($stmt->execute()) {
             echo "Category added successfully.";
-            header("Location:index.php");
+            header("Location:category_admin.php");
             exit;
         } else {
             echo "Error adding category: " . $stmt->error;
