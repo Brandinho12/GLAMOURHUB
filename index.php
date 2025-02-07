@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 session_start();
-require 'connection.php';
+require 'C:\xampp\htdocs\GLAMOURHUB\Php\connection.php';
 
 // Fetch categories from the database
 $query = "SELECT category_name, image_path FROM categories";
@@ -211,7 +211,7 @@ if ($result->num_rows > 0) {
 
         <button class="dark-mode-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
 
-        <a href="#" class="register-btn">Register</a>
+        <a href="login_signp.html" class="register-btn">Register</a>
 
         <!-- Mobile Menu Icon -->
         <span class="menu-icon" onclick="toggleMenu()">☰</span>
@@ -219,31 +219,32 @@ if ($result->num_rows > 0) {
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="#">Home</a>
+        <a href="index.php">Home</a>
         <a href="#">About Us</a>
         <a href="#">Services</a>
-        <a href="#" class="register-btn">Register</a>
+        <a href="login_signp.html" class="register-btn">Register</a>
     </div>
 
     <!-- Main Content -->
-    <div style="background: url('back.webp') no-repeat center center; background-size: cover; padding: 70px 40px; text-align: center;">
+    <div style="background: url('Uploads/back.webp') no-repeat center center; background-size: cover; padding: 70px 40px; text-align: center;">
         <h1 style="font-size: 48px; color: #ff69b4;">YOUR BEST BEAUTY PAL</h1>
         <p style="font-size: 16px; color: #ccc;">Find and book beauty services with ease.</p>
     </div>
 
-    <!-- Scrollable Categories -->
-    <div class="category-container">
-        <?php if (!empty($categories)): ?>
-            <?php foreach ($categories as $category): ?>
-                <div class="category-card">
-                    <img src="<?php echo htmlspecialchars($category['image_path']); ?>" alt="<?php echo htmlspecialchars($category['category_name']); ?>">
-                    <h2 style="margin: 10px 0; color: white;"><?php echo htmlspecialchars($category['category_name']); ?></h2>
-                </div>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <p style="color: #ccc;">No categories found.</p>
-        <?php endif; ?>
-    </div>
+  <!-- Scrollable Categories -->
+<div class="category-container">
+    <?php if (!empty($categories)): ?>
+        <?php foreach ($categories as $category): ?>
+            <a href="Php/vendors.php?category=<?php echo urlencode($category['category_name']); ?>" class="category-card">
+                <img src="<?php echo htmlspecialchars($category['image_path']); ?>" alt="<?php echo htmlspecialchars($category['category_name']); ?>">
+                <h2 style="margin: 10px 0; color: white;"><?php echo htmlspecialchars($category['category_name']); ?></h2>
+            </a>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <p style="color: #ccc;">No categories found.</p>
+    <?php endif; ?>
+</div>
+
 
     <!-- Footer -->
     <footer style="text-align: center; padding: 20px; background-color: #2c2c2c; color: #ccc;">
